@@ -17,9 +17,12 @@ int h, i = 1;
 
 int main() {
   printf("----------------------------------------WELCOME TO Address Book-------------------------\n");
+  // Varaile define
   int c, y, addcon, a = 1;
   int choice, v, pos;
   char b[50];
+
+  // Insert a static data for perform program
   strcpy(sp[1].name, "Tejas");
   strcpy(sp[1].num, "8511708570");
   strcpy(sp[1].mail, "htejas@gmail.com");
@@ -32,51 +35,73 @@ int main() {
   strcpy(sp[3].num, "8160235256");
   strcpy(sp[3].mail, "pricha@gmail.com");
   i++;
+
+  // loop for contiunes run program
   while (a) {
-    printf("1--->DISPLAY CONTACTS\n2--->DELETING CONTACTS\n3--->ADDING CONTACTS\n4--->EDIT CONTACTS\n5--->FINDING CONTACTS\n6--->EXIT CONTACTS");
-    printf("\nENTER YOUR CHOICE:");
+    // display the option
+    printf("\n1--->DISPLAY CONTACTS\n2--->DELETING CONTACTS\n3--->ADDING CONTACTS\n4--->EDIT CONTACTS\n5--->FINDING CONTACTS\n6--->EXIT CONTACTS");
+    // take value from user to select option
+    printf("\nENTER YOUR CHOICE: ");
     scanf("%d", & choice);
 
+    // display the horizantal line
     for (int j = 0; j < 140; j++) {
       printf("_");
     }
+
+    // switch case for perform the differnt function
     switch (choice) {
+        // case 1 is for display all the Contact
       case 1:
         display();
         break;
-        
+        // case 2 is for delete the Contact 
       case 2:
         delete();
         break;
-        
+        // case 3 is for add the Contact
       case 3:
         add();
         break;
-      
+        // case 4 is for edit the particular Contact by it's reg id
       case 4:
         edit();
         break;
-        
+        // case 5 is for find the Contact by it's reg id
       case 5:
         find();
         break;
-        
+        // case 6 is for exit the loop program
       case 6:
         a = 0;
         break;
-        
+        // print the default message which is invalid choose option
       default:
-        printf("\nINVALID CHOICE\n\n");
+        printf("\nINVALID CHOICE OPTION\n\n");
         break;
     }
   }
 }
 
+/*
+* add function 
+* add the contact on no of persons
+-----------------------------------
+* steps for add function block
+* 1) take the user input for ask how many persons you have to add
+* 2) on number of person loop will execute for eg:- number of person is 2 therefore 2 time loop will execute
+* 3) after the add the all contact list will print
+*/
 void add(){
+    // varaiable define
     int addcon, v, j, n;
+
+    // take input from user foe enter the number of persons entered
     printf("\nADDING CONTACT");
     printf("\nENTER THE NO OF PERSONS TO BE ADDED:");
     scanf("%d", & addcon);
+
+    // loop perform a add data in a structure dict
     for (v = i; v < i + addcon; ++v) {
       printf("\nEnter Name: ");
       scanf("%s", sp[v].name);
@@ -85,20 +110,27 @@ void add(){
       printf("\nEnter Mail: ");
       scanf("%s", sp[v].mail);
     }
+
+    // display the horizantal line 
     printf("\n");
     for (int j = 0; j < 140; j++) {
       printf("_");
     }
     i = v;
+
+    // display the whole list in contact
     printf("\nAFTER CHANGING\n");
     printf("REG NO\tNAME\t\tNUMBER\t\t\tEMAIL");
     for (int n = 1; n < i; n++) {
       printf("\n%d\t%s\t\t%s\t\t%s", n, sp[n].name, sp[n].num, sp[n].mail);
     }
+    
+    // display the horizantal line
     printf("\n");
     for (int j = 0; j < 140; j++) {
       printf("_");
     }
+    printf('\n');
 }
 
 void edit(){
