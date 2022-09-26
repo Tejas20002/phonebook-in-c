@@ -16,7 +16,7 @@ struct dict {
 int h, i = 1;
 
 int main() {
-  printf("----------------------------------------WELCOME TO E PHONE BOOK-------------------------\n");
+  printf("----------------------------------------WELCOME TO Address Book-------------------------\n");
   int c, y, addcon, a = 1;
   int choice, v, pos;
   char b[50];
@@ -48,6 +48,7 @@ int main() {
       case 2:
         delete();
         break;
+        
       case 3:
         add();
         break;
