@@ -7,6 +7,7 @@ void add();
 void edit();
 void find();
 
+// Structure of the dict mean contact 
 struct dict {
   char name[50];
   char num[11];
@@ -15,6 +16,7 @@ struct dict {
 }sp[25];
 int h, i = 1;
 
+// main function start
 int main() {
   printf("----------------------------------------WELCOME TO Address Book-------------------------\n");
   // Varaile define
