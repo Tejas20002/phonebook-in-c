@@ -30,7 +30,7 @@ int main() {
   strcpy(sp[1].mail, "htejas@gmail.com");
   i++;
   strcpy(sp[2].name, "Bhakti");
-  strcpy(sp[2].num, "7600230062");
+  strcpy(sp[2].num, "7600230000");
   strcpy(sp[2].mail, "gbhakti@gmail.com");
   i++;
   strcpy(sp[3].name, "Richa");
