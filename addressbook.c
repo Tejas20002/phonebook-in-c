@@ -19,7 +19,7 @@ int h, i = 1;
 // main function start
 int main() {
   printf("----------------------------------------WELCOME TO Address Book-------------------------\n");
-  // Varaile define
+  // Variable define
   int c, y, addcon, a = 1;
   int choice, v, pos;
   char b[50];
