@@ -160,13 +160,18 @@ void edit(){
         printf("\nReg:- %d\nName:- %s\nMobile:- %s\nEmail:- %s\n\n", h, sp[h].name, sp[h].num, sp[h].mail);
     }
 }
-
+/*
+* display() function will print the stack value in the console
+*/
 void display() {
+  // display the format of the table
   printf("\nREG NO\tNAME\t\tNUMBER\t\t\tEMAIL");
+  // for loop will print the stack value in the console in format
   for (int n = 1; n < i; n++) {
     printf("\n%d\t%s\t\t%s\t\t%s", n, sp[n].name, sp[n].num, sp[n].mail);
   }
   printf("\n");
+  // print the horizantal line
   for (int j = 0; j < 140; j++) {
     printf("_");
   }
