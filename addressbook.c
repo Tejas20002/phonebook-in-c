@@ -176,9 +176,12 @@ void display() {
     printf("_");
   }
 }
-
+/*
+* delete() funtion will remove the contact
+*/
 void delete() {
   int c, n, j;
+  // take the register id of contact for delete
   printf("\nENTER THE REG NO OF CONTACT TO REMOVE:");
   scanf("%d", & h);
   if (h >= i) {
@@ -190,6 +193,7 @@ void delete() {
       strcpy(sp[c].mail, sp[c + 1].mail);
     }
     i--;
+    // display the contact of person by register id
     for (int n = 1; n < i; n++) {
       printf("\n%d\t%s\t\t%s\t%s", n, sp[n].name, sp[n].num, sp[n].mail);
     }
