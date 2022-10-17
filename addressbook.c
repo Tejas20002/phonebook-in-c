@@ -134,12 +134,24 @@ void add(){
     }
     printf('\n');
 }
-
+/*
+* edit() function
+* edit function take the prefence of the register id to edit contact Number.
+-------------------------------------
+* step for the edit contact 
+* 1. Register Id taken from user for edit the contact.
+* 2. taken value from user to replace the contact value.
+* 3. display the update value.
+*/
 void edit(){
+    // create the struct object
     struct dict newdict;
     int c, n, j;
+    // take the register id of contact for edit value
     printf("\nENTER THE REG NO OF CONTACT TO UPDATE:");
     scanf("%d", & h);
+
+    // valid the register id
     if (h >= i) {
         printf("INVALID REG NO");
     } else {
@@ -152,9 +164,12 @@ void edit(){
       printf("\nEnter the Mail id to Edit: ");
       scanf("%s", newdict.mail);
       
-      strcpy(sp[h].name,newdict.name);
-      strcpy(sp[h].num,newdict.num);
-      strcpy(sp[h].mail,newdict.mail);
+      if(newdict.name != "")
+        strcpy(sp[h].name,newdict.name);
+      if(newdict.num != "")
+        strcpy(sp[h].num,newdict.num);
+      if(newdict.name != "")
+        strcpy(sp[h].mail,newdict.mail);
         
         printf("Update CONTACT");
         printf("\nReg:- %d\nName:- %s\nMobile:- %s\nEmail:- %s\n\n", h, sp[h].name, sp[h].num, sp[h].mail);
