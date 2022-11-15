@@ -1,8 +1,9 @@
 #include <stdio.h>
-#include<string.h>
+#include <string.h>
 
 void display();
 void delete();
+void selectedDelete();
 void add();
 void edit();
 void find();
@@ -41,7 +42,7 @@ int main() {
   // loop for contiunes run program
   while (a) {
     // display the option
-    printf("\n1--->DISPLAY CONTACTS\n2--->DELETING CONTACTS\n3--->ADDING CONTACTS\n4--->EDIT CONTACTS\n5--->FINDING CONTACTS\n6--->EXIT CONTACTS");
+    printf("\n1--->DISPLAY CONTACTS\n2--->DELETING CONTACTS\n3--->ADDING CONTACTS\n4--->EDIT CONTACTS\n5--->FINDING CONTACTS\n6--->EXIT CONTACTS\n7--->MULTIPLE DELTE CONTACT");
     // take value from user to select option
     printf("\nENTER YOUR CHOICE: ");
     scanf("%d", & choice);
@@ -76,6 +77,9 @@ int main() {
         // case 6 is for exit the loop program
       case 6:
         a = 0;
+        break;
+      case 7:
+        selectedDelete();
         break;
         // print the default message which is invalid choose option
       default:
@@ -216,6 +220,38 @@ void delete() {
   printf("\n");
   for (int j = 0; j < 140; j++) {
     printf("_");
+  }
+}
+
+void selectedDelete() {
+  int c, n, j, countPerson, person[]={};
+  printf("\nADDING CONTACT");
+  printf("\nENTER THE NO OF PERSONS TO BE DELETE:");
+  scanf("%d", &countPerson);
+  printf("%d", countPerson);
+  // loop for the delete multiple contact
+  for(int i = 0; i<countPerson; i++){  
+    // take the register id of contact for delete
+    printf("\nENTER THE REG NO OF CONTACT TO REMOVE:");
+    scanf("%d", & h);
+    if (h >= i) {
+      printf("INVALID REG NO");
+    } else {
+      for (c = h; c <= i; c++) {
+        strcpy(sp[c].name, sp[c + 1].name);
+        strcpy(sp[c].num, sp[c + 1].num);
+        strcpy(sp[c].mail, sp[c + 1].mail);
+      }
+      i--;
+      // display the contact of person by register id
+      for (int n = 1; n < i; n++) {
+        printf("\n%d\t%s\t\t%s\t%s", n, sp[n].name, sp[n].num, sp[n].mail);
+      }
+    }
+    printf("\n");
+    for (int j = 0; j < 140; j++) {
+      printf("_");
+    }
   }
 }
 
